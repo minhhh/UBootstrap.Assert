@@ -27,7 +27,30 @@ The reason it's named `CUSTOM_ASSERT` is to make it look like a macro definition
 
 There is no way to include the assertion without throwing exception, because it does not make sense to assert something that does not crash the build if its not true. Those set of errors belong to a logger, not an assert utility.
 
+**Usage**
+
 To include UBoostrap.Assert into your project, you can use npm method of unity package manament described [here](https://github.com/minhhh/UBootstrap).
+
+Calling the API is pretty straightforward:
+
+```
+GameObject go = null;
+
+CUSTOM_ASSERT.IsNotNull (go, Constant.ErrorCode.IsNull, "go should not be null");
+
+// A shorter version if you wrote your own IsNotNull function
+CUSTOM_ASSERT.IsNotNull (go, "go should not be null");
+```
+
+Here, `Constant.ErrorCode.IsNull` is defined for your particular project. Then you can write a more convenient `IsNotNull` function like so:
+
+```
+[System.Diagnostics.Conditional ("CUSTOM_ASSERT")]
+static public void IsNotNull (object value, string message = "", params object[] args)
+{
+    IsNotNull (value, Constant.ErrorCode.IsNull, message, args);
+}
+```
 
 ## Changelog
 

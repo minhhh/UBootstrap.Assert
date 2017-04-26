@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.Assertions
 namespace UBootstrap
 {
     public partial class CUSTOM_ASSERT
@@ -8,7 +8,7 @@ namespace UBootstrap
         [System.Diagnostics.Conditional ("CUSTOM_ASSERT")]
         static public void IsNotNull (object value, string message = "", params object[] args)
         {
-            IsTrue (value != null, 1, message, args);
+            IsNotNull (value, 1, message, args);
         }
 
         [System.Diagnostics.Conditional ("CUSTOM_ASSERT")]
