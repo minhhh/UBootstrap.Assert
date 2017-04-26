@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Assertions
+
 namespace UBootstrap
 {
     public partial class CUSTOM_ASSERT
@@ -15,7 +15,7 @@ namespace UBootstrap
         // Adding , params object[] args will cause Error 
         static public void Fail (string message = "")
         {
-            IsTrue (false, 2, message);
+            Fail (2, message);
         }
     }
 }
