@@ -1,6 +1,6 @@
 {
   "name": "leanpool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "UBoostrap.Assert is a simple Assert library that helps you find bugs in your game more easily.",
   "main": "index.js",
   "files": [

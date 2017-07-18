@@ -54,6 +54,10 @@ static public void IsNotNull (object value, string message = "", params object[]
 
 ## Changelog
 
+**0.0.2**
+
+* Add missing `index.js`
+
 **0.0.1**
 
 * Initial commit
